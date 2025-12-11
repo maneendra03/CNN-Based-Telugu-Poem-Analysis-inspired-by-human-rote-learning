@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large files (don't commit to git)
+checkpoints/*.pt
+data/raw/
+data/kaggle_poem_dataset.csv
+data/kaggle_poem_dataset.csv.zip
+data/shakespeare_raw.txt
+
+# Logs
+*.log
+wandb/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Results (optional - uncomment to exclude)
+# results/

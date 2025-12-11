@@ -1,0 +1,158 @@
+{
+    "rules": [
+        {
+            "name": "end_rhyme",
+            "rule_type": "rhyme",
+            "pattern": "line_end_similarity",
+            "weight": 1.0,
+            "description": "Lines should rhyme at the end according to scheme"
+        },
+        {
+            "name": "meter_consistency",
+            "rule_type": "meter",
+            "pattern": "syllable_stress_pattern",
+            "weight": 0.8,
+            "description": "Maintain consistent syllable stress patterns"
+        },
+        {
+            "name": "iambic_pentameter",
+            "rule_type": "meter",
+            "pattern": "uS_uS_uS_uS_uS",
+            "weight": 0.9,
+            "description": "10 syllables per line with alternating unstressed-stressed pattern"
+        },
+        {
+            "name": "line_length_consistency",
+            "rule_type": "structure",
+            "pattern": "syllable_variance_low",
+            "weight": 0.6,
+            "description": "Lines should have similar syllable counts"
+        },
+        {
+            "name": "stanza_separation",
+            "rule_type": "structure",
+            "pattern": "blank_line_between_stanzas",
+            "weight": 0.5,
+            "description": "Stanzas should be separated by blank lines"
+        },
+        {
+            "name": "grammar_subject_verb",
+            "rule_type": "grammar",
+            "pattern": "subject_verb_agreement",
+            "weight": 0.7,
+            "description": "Subjects and verbs should agree in number"
+        },
+        {
+            "name": "grammar_tense_consistency",
+            "rule_type": "grammar",
+            "pattern": "tense_consistency",
+            "weight": 0.6,
+            "description": "Maintain consistent verb tense within stanzas"
+        },
+        {
+            "name": "alliteration",
+            "rule_type": "style",
+            "pattern": "initial_consonant_repetition",
+            "weight": 0.4,
+            "description": "Repetition of initial consonant sounds"
+        },
+        {
+            "name": "assonance",
+            "rule_type": "style",
+            "pattern": "vowel_sound_repetition",
+            "weight": 0.4,
+            "description": "Repetition of vowel sounds within lines"
+        },
+        {
+            "name": "imagery",
+            "rule_type": "style",
+            "pattern": "sensory_language",
+            "weight": 0.5,
+            "description": "Use of vivid sensory descriptions"
+        },
+        {
+            "name": "metaphor",
+            "rule_type": "style",
+            "pattern": "figurative_comparison",
+            "weight": 0.5,
+            "description": "Use of metaphorical language"
+        },
+        {
+            "name": "enjambment",
+            "rule_type": "style",
+            "pattern": "line_continuation",
+            "weight": 0.3,
+            "description": "Sentence continuation across line breaks"
+        }
+    ],
+    "rhyme_schemes": {
+        "couplet": {
+            "pattern": "AA BB CC",
+            "description": "Pairs of rhyming lines"
+        },
+        "alternate": {
+            "pattern": "ABAB CDCD",
+            "description": "Alternating rhymes"
+        },
+        "enclosed": {
+            "pattern": "ABBA",
+            "description": "Enclosed/embracing rhyme"
+        },
+        "sonnet_english": {
+            "pattern": "ABAB CDCD EFEF GG",
+            "description": "Shakespearean sonnet form"
+        },
+        "sonnet_italian": {
+            "pattern": "ABBA ABBA CDE CDE",
+            "description": "Petrarchan sonnet form"
+        },
+        "limerick": {
+            "pattern": "AABBA",
+            "description": "Limerick rhyme scheme"
+        },
+        "terza_rima": {
+            "pattern": "ABA BCB CDC",
+            "description": "Dante's interlocking tercets"
+        },
+        "free_verse": {
+            "pattern": null,
+            "description": "No required rhyme scheme"
+        }
+    },
+    "meter_patterns": {
+        "iambic": {
+            "pattern": "uS",
+            "description": "Unstressed-stressed (da-DUM)"
+        },
+        "trochaic": {
+            "pattern": "Su",
+            "description": "Stressed-unstressed (DUM-da)"
+        },
+        "anapestic": {
+            "pattern": "uuS",
+            "description": "Two unstressed, one stressed (da-da-DUM)"
+        },
+        "dactylic": {
+            "pattern": "Suu",
+            "description": "One stressed, two unstressed (DUM-da-da)"
+        },
+        "spondaic": {
+            "pattern": "SS",
+            "description": "Two stressed syllables"
+        },
+        "pyrrhic": {
+            "pattern": "uu",
+            "description": "Two unstressed syllables"
+        }
+    },
+    "line_lengths": {
+        "monometer": 1,
+        "dimeter": 2,
+        "trimeter": 3,
+        "tetrameter": 4,
+        "pentameter": 5,
+        "hexameter": 6,
+        "heptameter": 7,
+        "octameter": 8
+    }
+}

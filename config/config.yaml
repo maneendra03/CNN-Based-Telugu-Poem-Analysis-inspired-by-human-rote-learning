@@ -1,0 +1,101 @@
+# CNN-Based Poem Learner Configuration
+
+# Data Settings
+data:
+  train_path: "data/processed/train.json"
+  val_path: "data/processed/val.json"
+  test_path: "data/processed/test.json"
+  knowledge_base_path: "data/knowledge_base/"
+  max_seq_length: 512
+  max_line_length: 64
+  max_lines_per_poem: 32
+
+# Embedding Settings
+embedding:
+  type: "bert"  # "bert" or "word2vec"
+  model_name: "bert-base-uncased"
+  embedding_dim: 768
+  freeze_embeddings: false
+
+# CNN Module Settings
+cnn:
+  num_filters: 256
+  kernel_sizes: [3, 5, 7]  # Multiple kernels for different pattern scales
+  dropout: 0.3
+  activation: "relu"
+
+# Hierarchical RNN Settings
+hierarchical_rnn:
+  char_level:
+    hidden_size: 256
+    num_layers: 2
+    bidirectional: true
+    dropout: 0.3
+  line_level:
+    hidden_size: 512
+    num_layers: 2
+    bidirectional: true
+    dropout: 0.3
+
+# Memory & Attention Module Settings
+memory_attention:
+  attention_heads: 8
+  attention_dim: 512
+  memory_size: 256
+  num_memory_cells: 16  # For rote learning simulation
+  dropout: 0.2
+
+# Knowledge Base Settings
+knowledge_base:
+  use_knowledge: true
+  poetic_rules_path: "data/knowledge_base/poetic_rules.json"
+  grammar_rules_path: "data/knowledge_base/grammar_rules.json"
+  feedback_iterations: 3  # Number of polishing iterations
+
+# Decoder Settings
+decoder:
+  hidden_size: 512
+  num_layers: 2
+  dropout: 0.3
+  use_attention: true
+
+# Training Settings
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_steps: 1000
+  max_grad_norm: 1.0
+  early_stopping_patience: 10
+  scheduler: "cosine"  # "cosine", "linear", "constant"
+  
+# Rote Learning Simulation
+rote_learning:
+  repetition_factor: 3  # How many times to repeat patterns
+  memory_decay: 0.1  # Rate of forgetting
+  retention_threshold: 0.7  # Threshold for "memorized" patterns
+
+# Logging & Checkpoints
+logging:
+  log_dir: "logs/"
+  checkpoint_dir: "checkpoints/"
+  save_every: 5  # Save every N epochs
+  log_every: 100  # Log every N steps
+  use_wandb: true
+  wandb_project: "poem-learner"
+
+# Evaluation Settings
+evaluation:
+  metrics: ["bleu", "perplexity", "rhyme_accuracy", "meter_consistency"]
+  num_samples: 50  # For generation evaluation
+  beam_size: 5
+
+# Device Settings
+device:
+  use_cuda: true
+  cuda_device: 0
+  mixed_precision: true
+
+# Random Seed
+seed: 42

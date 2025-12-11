@@ -1,0 +1,74 @@
+{
+    "basic_grammar": [
+        {
+            "name": "sentence_structure",
+            "description": "Basic subject-verb-object ordering",
+            "weight": 0.8
+        },
+        {
+            "name": "article_usage",
+            "description": "Correct use of a, an, the",
+            "weight": 0.6
+        },
+        {
+            "name": "pronoun_reference",
+            "description": "Clear pronoun antecedents",
+            "weight": 0.5
+        }
+    ],
+    "poetic_licenses": [
+        {
+            "name": "elision",
+            "description": "Omission of sounds for meter (e.g., 'o'er' for 'over')",
+            "examples": [
+                "'tis",
+                "ne'er",
+                "e'en",
+                "o'er"
+            ]
+        },
+        {
+            "name": "archaisms",
+            "description": "Use of archaic words for poetic effect",
+            "examples": [
+                "thee",
+                "thou",
+                "hath",
+                "doth",
+                "wherefore",
+                "hence"
+            ]
+        },
+        {
+            "name": "inversion",
+            "description": "Non-standard word order for emphasis or meter",
+            "examples": [
+                "Came the dawn",
+                "Happy am I"
+            ]
+        }
+    ],
+    "punctuation_rules": [
+        {
+            "name": "line_end_punctuation",
+            "description": "Lines may end with or without punctuation",
+            "weight": 0.3
+        },
+        {
+            "name": "caesura",
+            "description": "Mid-line pause, often marked by punctuation",
+            "weight": 0.4
+        }
+    ],
+    "capitalization": {
+        "line_initial": {
+            "traditional": true,
+            "modern": false,
+            "description": "Whether to capitalize first letter of each line"
+        },
+        "proper_nouns": {
+            "required": true,
+            "description": "Always capitalize proper nouns"
+        }
+    }
+}
