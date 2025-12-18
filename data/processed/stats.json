@@ -1,8 +1,0 @@
-{
-  "total": 15069,
-  "train": 12055,
-  "val": 1506,
-  "test": 1508,
-  "unique_authors": 3272,
-  "avg_poem_length": 1099
-}

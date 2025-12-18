@@ -1,0 +1,287 @@
+{
+    "language": "telugu",
+    "description": "Telugu Prosody Rules (ఛందస్సు నియమాలు)",
+    "chandassu": {
+        "description": "Telugu Meter Types (ఛందస్సు రకాలు)",
+        "types": {
+            "utpalamala": {
+                "name": "ఉత్పలమాల",
+                "english": "Utpalamala",
+                "pattern": "భ-ర-న-భ-భ-ర-వ",
+                "syllables_per_line": 20,
+                "description": "Most popular Telugu meter, 20 syllables per line"
+            },
+            "champakamala": {
+                "name": "చంపకమాల",
+                "english": "Champakamala",
+                "pattern": "న-జ-భ-జ-జ-జ-ర",
+                "syllables_per_line": 21,
+                "description": "21 syllables, used for grand narratives"
+            },
+            "sisa_padyam": {
+                "name": "సీస పద్యం",
+                "english": "Seesa Padyam",
+                "lines": 4,
+                "half_lines": 8,
+                "description": "Four lines, each split into two half-lines"
+            },
+            "kandham": {
+                "name": "కందం",
+                "english": "Kandham",
+                "lines": 4,
+                "description": "Popular short verse form, 4 lines"
+            },
+            "aataveladi": {
+                "name": "ఆటవెలది",
+                "english": "Aataveladi",
+                "lines": 4,
+                "description": "Folk-style verse, simple meter"
+            },
+            "tetagiti": {
+                "name": "తేటగీతి",
+                "english": "Tetagiti",
+                "lines": 4,
+                "syllables_per_line": [
+                    12,
+                    8,
+                    12,
+                    8
+                ],
+                "description": "Alternating long-short lines"
+            }
+        }
+    },
+    "praasa": {
+        "description": "Telugu Rhyme Rules (ప్రాస నియమాలు)",
+        "definition": "Second letter of each line must be same",
+        "types": {
+            "adi_praasa": {
+                "name": "ఆది ప్రాస",
+                "description": "Second akshara (letter) repetition at line start"
+            },
+            "antya_praasa": {
+                "name": "అంత్య ప్రాస",
+                "description": "End rhyme, last syllable matching"
+            },
+            "madhya_praasa": {
+                "name": "మధ్య ప్రాస",
+                "description": "Internal rhyme, middle syllable matching"
+            }
+        },
+        "examples": [
+            {
+                "lines": [
+                    "అందరికీ వందనాలు",
+                    "మందిరాన మంగళం"
+                ],
+                "praasa_letter": "ం",
+                "explanation": "Second letter 'ం' repeats"
+            }
+        ]
+    },
+    "yati": {
+        "description": "Pause/Caesura Rules (యతి నియమాలు)",
+        "definition": "Required pause positions in verse lines",
+        "types": {
+            "prabhanda_yati": {
+                "name": "ప్రబంధ యతి",
+                "position": "Middle of line"
+            },
+            "pada_yati": {
+                "name": "పాద యతి",
+                "position": "End of foot/pada"
+            }
+        }
+    },
+    "ganaalu": {
+        "description": "Metrical Feet (గణాలు)",
+        "definition": "Patterns of laghu (short) and guru (long) syllables",
+        "feet": {
+            "ya": {
+                "name": "య",
+                "pattern": "I U U",
+                "description": "la-ga-ga (short-long-long)"
+            },
+            "ma": {
+                "name": "మ",
+                "pattern": "U U U",
+                "description": "ga-ga-ga (all long)"
+            },
+            "ta": {
+                "name": "త",
+                "pattern": "U U I",
+                "description": "ga-ga-la (long-long-short)"
+            },
+            "ra": {
+                "name": "ర",
+                "pattern": "U I U",
+                "description": "ga-la-ga"
+            },
+            "ja": {
+                "name": "జ",
+                "pattern": "I U I",
+                "description": "la-ga-la"
+            },
+            "bha": {
+                "name": "భ",
+                "pattern": "U I I",
+                "description": "ga-la-la"
+            },
+            "na": {
+                "name": "న",
+                "pattern": "I I I",
+                "description": "la-la-la (all short)"
+            },
+            "sa": {
+                "name": "స",
+                "pattern": "I I U",
+                "description": "la-la-ga"
+            }
+        },
+        "symbols": {
+            "laghu": {
+                "symbol": "I",
+                "name": "లఘు",
+                "description": "Short syllable"
+            },
+            "guru": {
+                "symbol": "U",
+                "name": "గురు",
+                "description": "Long syllable"
+            }
+        }
+    },
+    "style_categories": {
+        "classical": {
+            "name": "శాస్త్రీయ కవిత్వం",
+            "examples": [
+                "పోతన భాగవతం",
+                "నన్నయ భారతం",
+                "తిక్కన భారతం"
+            ]
+        },
+        "devotional": {
+            "name": "భక్తి కవిత్వం",
+            "examples": [
+                "అన్నమయ్య పదాలు",
+                "త్యాగరాజ కీర్తనలు"
+            ]
+        },
+        "folk": {
+            "name": "జానపద కవిత్వం",
+            "examples": [
+                "జానపద గేయాలు",
+                "లాలి పాటలు"
+            ]
+        },
+        "modern": {
+            "name": "ఆధునిక కవిత్వం",
+            "examples": [
+                "వచన కవిత",
+                "నవ్య కవిత్వం"
+            ]
+        }
+    },
+    "famous_poets": [
+        {
+            "name": "నన్నయ",
+            "english": "Nannaya",
+            "era": "11th century",
+            "work": "ఆంధ్ర మహాభారతం"
+        },
+        {
+            "name": "తిక్కన",
+            "english": "Tikkana",
+            "era": "13th century",
+            "work": "మహాభారతం"
+        },
+        {
+            "name": "పోతన",
+            "english": "Pothana",
+            "era": "15th century",
+            "work": "భాగవతం"
+        },
+        {
+            "name": "వేమన",
+            "english": "Vemana",
+            "era": "18th century",
+            "work": "వేమన శతకం"
+        },
+        {
+            "name": "అన్నమయ్య",
+            "english": "Annamayya",
+            "era": "15th century",
+            "work": "సంకీర్తనలు"
+        },
+        {
+            "name": "శ్రీశ్రీ",
+            "english": "Sri Sri",
+            "era": "20th century",
+            "work": "మహాప్రస్థానం"
+        },
+        {
+            "name": "గురజాడ",
+            "english": "Gurajada",
+            "era": "19th century",
+            "work": "కన్యాశుల్కం"
+        }
+    ],
+    "vowels": {
+        "achulu": [
+            "అ",
+            "ఆ",
+            "ఇ",
+            "ఈ",
+            "ఉ",
+            "ఊ",
+            "ఋ",
+            "ౠ",
+            "ఎ",
+            "ఏ",
+            "ఐ",
+            "ఒ",
+            "ఓ",
+            "ఔ"
+        ]
+    },
+    "consonants": {
+        "hallulu": [
+            "క",
+            "ఖ",
+            "గ",
+            "ఘ",
+            "ఙ",
+            "చ",
+            "ఛ",
+            "జ",
+            "ఝ",
+            "ఞ",
+            "ట",
+            "ఠ",
+            "డ",
+            "ఢ",
+            "ణ",
+            "త",
+            "థ",
+            "ద",
+            "ధ",
+            "న",
+            "ప",
+            "ఫ",
+            "బ",
+            "భ",
+            "మ",
+            "య",
+            "ర",
+            "ల",
+            "వ",
+            "శ",
+            "ష",
+            "స",
+            "హ",
+            "ళ",
+            "క్ష",
+            "ఱ"
+        ]
+    }
+}
