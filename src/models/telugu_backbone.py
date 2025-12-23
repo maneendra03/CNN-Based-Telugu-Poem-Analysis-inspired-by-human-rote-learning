@@ -5,6 +5,7 @@ Using IndicBERT or MuRIL for Telugu language poem generation.
 
 import torch
 import torch.nn as nn
+import re
 from typing import Optional, List, Dict
 from transformers import (
     AutoModel, 
@@ -13,6 +14,56 @@ from transformers import (
     GPT2LMHeadModel,
     GPT2Config
 )
+
+# Telugu Unicode range: 0C00-0C7F
+TELUGU_RANGE = (0x0C00, 0x0C7F)
+
+def is_telugu_char(char: str) -> bool:
+    """Check if a character is Telugu."""
+    if len(char) != 1:
+        return False
+    code = ord(char)
+    return TELUGU_RANGE[0] <= code <= TELUGU_RANGE[1]
+
+def filter_telugu_text(text: str) -> str:
+    """
+    Filter text to keep only Telugu characters, numbers, and basic punctuation.
+    Removes non-Telugu script while preserving Telugu words.
+    """
+    result = []
+    words = text.split()
+    
+    for word in words:
+        # Check if word contains Telugu characters
+        telugu_chars = sum(1 for c in word if is_telugu_char(c))
+        total_chars = len([c for c in word if c.isalpha()])
+        
+        # Keep word if >50% Telugu characters or if it's punctuation/number
+        if total_chars == 0 or telugu_chars > total_chars * 0.5:
+            # Clean the word: keep Telugu, numbers, punctuation
+            cleaned = ''.join(
+                c for c in word 
+                if is_telugu_char(c) or c.isdigit() or c in '.,!?;:\n\r '
+            )
+            if cleaned:
+                result.append(cleaned)
+    
+    return ' '.join(result)
+
+def clean_telugu_output(text: str) -> str:
+    """
+    Clean and format Telugu poem output.
+    """
+    # Filter to Telugu only
+    text = filter_telugu_text(text)
+    
+    # Remove multiple spaces
+    text = re.sub(r' +', ' ', text)
+    
+    # Clean up newlines
+    text = re.sub(r'\n+', '\n', text)
+    
+    return text.strip()
 
 
 class TeluguPoemGenerator(nn.Module):
@@ -206,6 +257,9 @@ class TeluguPoemGenerator(nn.Module):
         # Decode
         generated_text = self.tokenizer.decode(generated[0], skip_special_tokens=True)
         
+        # Filter to Telugu only
+        generated_text = clean_telugu_output(generated_text)
+        
         return generated_text
 
 
@@ -308,7 +362,8 @@ class TeluguMuRILGenerator(nn.Module):
                 if next_token.item() == self.tokenizer.sep_token_id:
                     break
         
-        return self.tokenizer.decode(generated[0], skip_special_tokens=True)
+        text = self.tokenizer.decode(generated[0], skip_special_tokens=True)
+        return clean_telugu_output(text)
 
 
 def create_telugu_generator(model_type: str = 'distilmbert', freeze_backbone: bool = True):

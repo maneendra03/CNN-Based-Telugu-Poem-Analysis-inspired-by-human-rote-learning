@@ -184,11 +184,7 @@ def create_ui():
     """Create Gradio interface with English UI."""
     
     with gr.Blocks(
-        title="Telugu Poetry AI",
-        theme=gr.themes.Soft(
-            primary_hue="orange",
-            secondary_hue="amber"
-        )
+        title="Telugu Poetry AI"
     ) as demo:
         gr.Markdown("""
         # 🎭 Telugu Poetry AI
@@ -242,8 +238,7 @@ def create_ui():
                     with gr.Column():
                         generated_output = gr.Textbox(
                             label="Generated Telugu Poem",
-                            lines=12,
-                            show_copy_button=True
+                            lines=12
                         )
                 
                 generate_btn.click(
@@ -382,7 +377,11 @@ def main():
         server_name="0.0.0.0",
         server_port=7860,
         share=False,
-        show_error=True
+        show_error=True,
+        theme=gr.themes.Soft(
+            primary_hue="orange",
+            secondary_hue="amber"
+        )
     )
 
 

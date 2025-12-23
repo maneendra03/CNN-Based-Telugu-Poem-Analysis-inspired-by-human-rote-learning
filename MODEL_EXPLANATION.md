@@ -9,12 +9,12 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     IndicBERT                                │
-│                                                              │
-│  • 12 Indian languages మద్దతు                               │
-│  • తెలుగు, హిందీ, తమిళ్, కన్నడ, మలయాళం...                  │
-│  • 110 Million parameters                                    │
-│  • ALBERT architecture                                       │
+│                     IndicBERT                               │
+│                                                             │
+│  • 12 Indian languages మద్దతు                                │
+│  • తెలుగు, హిందీ, తమిళ్, కన్నడ, మలయాళం...                     │
+│  • 110 Million parameters                                   │
+│  • ALBERT architecture                                      │
 │  • Trained on AI4Bharat corpus                              │
 └─────────────────────────────────────────────────────────────┘
 ```
