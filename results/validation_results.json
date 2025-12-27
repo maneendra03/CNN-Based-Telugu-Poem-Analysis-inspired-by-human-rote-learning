@@ -1,0 +1,318 @@
+{
+  "datasets": {
+    "status": "PASS",
+    "issues": [],
+    "stats": {
+      "telugu_train.json": {
+        "total": 8484,
+        "unique": 8484,
+        "duplicates": 0,
+        "avg_length": 297.0,
+        "telugu_ratio": 1.0
+      },
+      "telugu_val.json": {
+        "total": 1060,
+        "unique": 1060,
+        "duplicates": 0,
+        "avg_length": 426.4,
+        "telugu_ratio": 1.0
+      },
+      "telugu_test.json": {
+        "total": 1061,
+        "unique": 1061,
+        "duplicates": 0,
+        "avg_length": 450.2,
+        "telugu_ratio": 1.0
+      }
+    }
+  },
+  "preprocessing": {
+    "status": "PASS",
+    "issues": [],
+    "test_cases": [
+      {
+        "name": "Simple Telugu text",
+        "status": "PASS",
+        "details": {
+          "text": "Present",
+          "structure": "Present",
+          "praasa": "Present",
+          "meter": "Present",
+          "semantics": "Present"
+        }
+      },
+      {
+        "name": "Vemana Padyam",
+        "status": "PASS",
+        "details": {
+          "text": "Present",
+          "structure": "Present",
+          "praasa": "Present",
+          "meter": "Present",
+          "semantics": "Present",
+          "praasa_analysis": {
+            "has_praasa": false,
+            "match_ratio": 0.5
+          },
+          "satakam": "vemana"
+        }
+      },
+      {
+        "name": "Mixed content",
+        "status": "PASS",
+        "details": {
+          "text": "Present",
+          "structure": "Present",
+          "praasa": "Present",
+          "meter": "Present",
+          "semantics": "Present",
+          "akshara_count": 5
+        }
+      },
+      {
+        "name": "Emotional content",
+        "status": "PASS",
+        "details": {
+          "text": "Present",
+          "structure": "Present",
+          "praasa": "Present",
+          "meter": "Present",
+          "semantics": "Present",
+          "emotions": {
+            "love": 0.4878048780487805,
+            "devotion": 0.0,
+            "nature": 0.0,
+            "wisdom": 0.0,
+            "sorrow": 0.0,
+            "joy": 0.5121951219512195
+          }
+        }
+      }
+    ]
+  },
+  "interpretation": {
+    "status": "PASS",
+    "issues": [],
+    "rasa_accuracy": 1.0,
+    "theme_accuracy": 1.0,
+    "test_cases": [
+      {
+        "type": "rasa",
+        "description": "Love/Romance content",
+        "expected": "శృంగారం",
+        "status": "PASS",
+        "actual": "శృంగారం",
+        "scores": {
+          "శృంగారం": 0.6774193548387096,
+          "హాస్యం": 0.0,
+          "కరుణ": 0.3225806451612903,
+          "రౌద్రం": 0.0,
+          "వీరం": 0.0,
+          "భయానకం": 0.0,
+          "బీభత్సం": 0.0,
+          "అద్భుతం": 0.0,
+          "శాంతం": 0.0
+        }
+      },
+      {
+        "type": "rasa",
+        "description": "Anger content",
+        "expected": "రౌద్రం",
+        "status": "PASS",
+        "actual": "రౌద్రం",
+        "scores": {
+          "శృంగారం": 0.0,
+          "హాస్యం": 0.0,
+          "కరుణ": 0.0,
+          "రౌద్రం": 1.0,
+          "వీరం": 0.0,
+          "భయానకం": 0.0,
+          "బీభత్సం": 0.0,
+          "అద్భుతం": 0.0,
+          "శాంతం": 0.0
+        }
+      },
+      {
+        "type": "rasa",
+        "description": "Fear content",
+        "expected": "భయానకం",
+        "status": "PASS",
+        "actual": "భయానకం",
+        "scores": {
+          "శృంగారం": 0.0,
+          "హాస్యం": 0.0,
+          "కరుణ": 0.0,
+          "రౌద్రం": 0.0,
+          "వీరం": 0.0,
+          "భయానకం": 1.0,
+          "బీభత్సం": 0.0,
+          "అద్భుతం": 0.0,
+          "శాంతం": 0.0
+        }
+      },
+      {
+        "type": "rasa",
+        "description": "Joy/Humor content",
+        "expected": "హాస్యం",
+        "status": "PASS",
+        "actual": "హాస్యం",
+        "scores": {
+          "శృంగారం": 0.0,
+          "హాస్యం": 1.0,
+          "కరుణ": 0.0,
+          "రౌద్రం": 0.0,
+          "వీరం": 0.0,
+          "భయానకం": 0.0,
+          "బీభత్సం": 0.0,
+          "అద్భుతం": 0.0,
+          "శాంతం": 0.0
+        }
+      },
+      {
+        "type": "rasa",
+        "description": "Sorrow content",
+        "expected": "కరుణ",
+        "status": "PASS",
+        "actual": "కరుణ",
+        "scores": {
+          "శృంగారం": 0.0,
+          "హాస్యం": 0.0,
+          "కరుణ": 1.0,
+          "రౌద్రం": 0.0,
+          "వీరం": 0.0,
+          "భయానకం": 0.0,
+          "బీభత్సం": 0.0,
+          "అద్భుతం": 0.0,
+          "శాంతం": 0.0
+        }
+      },
+      {
+        "type": "theme",
+        "description": "Devotion theme",
+        "expected": "భక్తి",
+        "status": "PASS",
+        "actual": "భక్తి",
+        "scores": {
+          "నీతి": 0.0,
+          "భక్తి": 1.0,
+          "ప్రకృతి": 0.0,
+          "జ్ఞానం": 0.0,
+          "వైరాగ్యం": 0.0,
+          "సమాజం": 0.0
+        }
+      },
+      {
+        "type": "theme",
+        "description": "Ethics theme",
+        "expected": "నీతి",
+        "status": "PASS",
+        "actual": "నీతి",
+        "scores": {
+          "నీతి": 1.0,
+          "భక్తి": 0.0,
+          "ప్రకృతి": 0.0,
+          "జ్ఞానం": 0.0,
+          "వైరాగ్యం": 0.0,
+          "సమాజం": 0.0
+        }
+      },
+      {
+        "type": "theme",
+        "description": "Nature theme",
+        "expected": "ప్రకృతి",
+        "status": "PASS",
+        "actual": "ప్రకృతి",
+        "scores": {
+          "నీతి": 0.0,
+          "భక్తి": 0.0,
+          "ప్రకృతి": 1.0,
+          "జ్ఞానం": 0.0,
+          "వైరాగ్యం": 0.0,
+          "సమాజం": 0.0
+        }
+      }
+    ]
+  },
+  "generation": {
+    "status": "PASS",
+    "issues": [],
+    "metrics": {
+      "avg_length": 17.4,
+      "avg_telugu_ratio": 0.8898701298701297,
+      "avg_repetition_ratio": 0.0,
+      "avg_generation_time": 54.93035073280335,
+      "passed": 5,
+      "total": 5
+    },
+    "samples": [
+      {
+        "prompt": "తెలుగు భాష",
+        "status": "PASS",
+        "metrics": {
+          "length": 10,
+          "telugu_ratio": 0.9,
+          "repetition_ratio": 0.0,
+          "ngram_repetitions": 0,
+          "rasa": "శృంగారం",
+          "quality_score": 0.375
+        }
+      },
+      {
+        "prompt": "అమ్మ ప్రేమ",
+        "status": "PASS",
+        "metrics": {
+          "length": 20,
+          "telugu_ratio": 0.9,
+          "repetition_ratio": 0.0,
+          "ngram_repetitions": 0,
+          "rasa": "శృంగారం",
+          "quality_score": 0.375
+        }
+      },
+      {
+        "prompt": "ధర్మం మార్గం",
+        "status": "PASS",
+        "metrics": {
+          "length": 21,
+          "telugu_ratio": 0.8571428571428571,
+          "repetition_ratio": 0.0,
+          "ngram_repetitions": 0,
+          "rasa": "శృంగారం",
+          "quality_score": 0.375
+        }
+      },
+      {
+        "prompt": "విద్య నేర్చుకో",
+        "status": "PASS",
+        "metrics": {
+          "length": 14,
+          "telugu_ratio": 0.9285714285714286,
+          "repetition_ratio": 0.0,
+          "ngram_repetitions": 0,
+          "rasa": "శృంగారం",
+          "quality_score": 0.375
+        }
+      },
+      {
+        "prompt": "స్నేహం మంచిది",
+        "status": "PASS",
+        "metrics": {
+          "length": 22,
+          "telugu_ratio": 0.8636363636363636,
+          "repetition_ratio": 0.0,
+          "ngram_repetitions": 0,
+          "rasa": "శృంగారం",
+          "quality_score": 0.375
+        }
+      }
+    ]
+  },
+  "training": {
+    "status": "FAIL",
+    "issues": [
+      "Training failed: index out of range in self"
+    ],
+    "training_log": [],
+    "final_loss": null
+  }
+}
